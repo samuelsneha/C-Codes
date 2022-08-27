@@ -19,52 +19,49 @@ using namespace std;
         j++;
         k++;
     }
- }
-
-
-  while( i < n ) //THIS CANT BE IF STATEMENT BECAUSE IF IS A STATEMENT WHICH WILL BE EXECUTED ONLY ONCE. WHILE IS A LOOP AND IT WILL CONTINUE TILL THE CONDITION IS FALSE.
-  {
-      ans[k] = arr1[i];
-      i++;
-      k++;
-  }
-  while( j < m )  //THIS CANT BE IF STATEMENT BECAUSE IF IS A STATEMENT WHICH WILL BE EXECUTED ONLY ONCE. WHILE IS A LOOP AND IT WILL CONTINUE TILL THE CONDITION IS FALSE.
-  {
-      ans[k] = arr2[j];
-      j++;
-      k++;
-  }
-
+}
+while( i < n ) //THIS CANT BE IF STATEMENT BECAUSE IF IS A STATEMENT WHICH WILL BE EXECUTED ONLY ONCE. WHILE IS A LOOP AND IT WILL CONTINUE TILL THE CONDITION IS FALSE.
+{
+  ans[k] = arr1[i];
+  i++;
+  k++;
+}
+while( j < m )  //THIS CANT BE IF STATEMENT BECAUSE IF IS A STATEMENT WHICH WILL BE EXECUTED ONLY ONCE. WHILE IS A LOOP AND IT WILL CONTINUE TILL THE CONDITION IS FALSE.
+{
+  ans[k] = arr2[j];
+  j++;
+  k++;
 }
 
-  int main()
+}
+int main()
+{
+  int tc;
+  cin >> tc;
+  while ( tc--)
   {
-      int tc;
-      cin >> tc;
-      while ( tc--)
+      int n;
+      cin >>n;
+      int arr1[n];
+      for( int i=0; i < n; i++ )
       {
-          int n;
-          cin >>n;
-          int arr1[n];
-          for( int i=0; i < n; i++ )
-          {
-              cin >> arr1[i];
-          }
-          int m;
-          cin >> m;
-          int arr2[m];
-          for( int j=0; j < m; j++ )
-          {
-              cin >>arr2[j];
-          }
-          int ans[ m + n];//IT IS NECESSARY TO MENTION THE SIZE OF THE ARRAYS WHILE INITIALIZING IT.
-          mergetwoarrays( arr1, arr2,ans, n, m ); //SEE IF YOU PUT PARAMETERS  IN THE WORONG MANNER/ORDER  THEN  STILL YOU  CAN  GET  WRONG OUTPUT
-          for( int k =0; k < (m + n); k++ )
-          {
-              cout << ans[k] << ' ';
-          }
+          cin >> arr1[i];
+      }
+      int m;
+      cin >> m;
+      int arr2[m];
+      for( int j=0; j < m; j++ )
+      {
+          cin >>arr2[j];
+      }
+      int ans[ m + n];//IT IS NECESSARY TO MENTION THE SIZE OF THE ARRAYS WHILE INITIALIZING IT.
+      mergetwoarrays( arr1, arr2,ans, n, m ); //SEE IF YOU PUT PARAMETERS  IN THE WORONG MANNER/ORDER  THEN  STILL YOU  CAN  GET  WRONG OUTPUT
+      for( int k =0; k < (m + n); k++ )
+      {
+          cout << ans[k] << ' ';
       }
   }
+}
 */
 
 int * merge2sortedArrays( int * arr1, int * arr2, int size1, int size2 )

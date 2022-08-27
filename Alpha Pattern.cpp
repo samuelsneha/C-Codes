@@ -1,39 +1,37 @@
 #include <iostream>
 using namespace std;
-int main() {
-int n;
-char values ;
-char  nextrow = 'A';
-cin >> n;
-int i =1;
-while( i<=n){
-int j=1;
-values = nextrow;
-while ( j <=i) {
-cout << values;
-j++;
-    }
-cout << endl;
-nextrow++;
-i=i+1;
-  }
-}
 
+// int main()
+// {
+//     int rows;
+//     cin >> rows;
+//     int a = 65;
 
-
-//#include<iostream>
-// using namespace std;
-// int main(){
-// int i=1,n;
-//cin>>n;
-//  while(i<=n){
-//    int j=1;
-//    char ch='A'+i-1;
-//    while(j<=i){
-//        cout<<ch;
-//        j++;
-//    }
-//    cout<<endl;
-//    i++;
+//     for( int i = 1; i <= rows; i++ )// THE FIRST FOR LOOP IS FOR ROWS ie. THE NUMBER OF ROWS THATS NEEDS TO BE PRINTED
+//     {
+//         char b = a;
+//         for( int j = 1 ; j <= i; j++ )//THE SECOND FOR LOOP IS FOR COLUMNS ie. THE NUMBER OF COLUMNS EACH ROW SHOULD HAVE
+//         {
+//             cout << b;// THEN AT LAST YOU HAVE TO PRINT WHHICH CHARACTER/VALUE NEEDS TO BE PRINTED. EITHER YOU WILL HAVE TO MANIPULATE THE VALUE OR DIRECTLY PRINT THE CHARACTER REQUIRED DIRECTLY.
+//         }
+//         a++;
+//         cout << endl;
+//     }
+//     return 0;
 // }
-//}
+
+
+int main(){
+    int rows;
+    char alpha = 'A'; /* OR char alpha = 65; */
+    //cout << "Enter the number of rows";
+    cin >> rows;
+    for( int i = 1; i <= rows; i++ ){
+        for( int j = 1; j <= i; j++ ){
+            cout << alpha;
+        }
+        cout << endl;
+        alpha++;
+    }
+    return 0;
+}

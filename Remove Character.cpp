@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//Didn't do using String Objects because it's literally the same.
 void removecharacter( char str[] , char c1 )
 {   int j = 0;
     for( int i=0; str[i] !='\0'; i++ )
@@ -11,8 +12,6 @@ void removecharacter( char str[] , char c1 )
         }
     }
     str[j] = '\0';
-
-
 }
 
 int main()

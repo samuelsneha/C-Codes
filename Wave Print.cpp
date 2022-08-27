@@ -1,6 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-
 /*void waveprint( int **mat, int m, int n )
 {
 
@@ -43,7 +42,7 @@ int main()
     waveprint( mat, m, n);
 }
 }*/
-void wavePrint( int matrix[][], int m, int n )
+/*void wavePrint( int matrix[][], int m, int n )
 {
     for( int j = 0; j < n; j++ )
     {
@@ -81,4 +80,36 @@ int main()
       wavePrint( matrix, m , n );
     }
     return 0;
+}*/
+void wavePrint( int **a, int m, int n ){
+    for( int k = 0; k < n; k++ ){
+        if( k % 2 == 0 ){
+            for( int i = 0; i < m; i++ ){
+                cout << a[i][k] << " ";
+            }
+        }
+        else{
+            for( int i = m - 1; i >= 0; i-- ){
+                cout << a[i][k] << " ";
+             }
+        }
+    }
+}
+int main(){
+    int t;
+    cin >> t;
+    while( t > 0 ){
+        int m, n;
+        cin >> m >> n;
+        int **a = new int *[m]; //Make a habit to understand and implement this when you have to pass 2D Array to the function as a parameter.
+        for( int i = 0; i < m; i++ ){
+            a[i] = new int[n];//Make a habit to understand and implement this when you have to pass 2D Array to the function as a parameter.
+            for( int j = 0; j < n; j++ ){
+                cin >> a[i][j];
+            }
+        }
+        wavePrint( a, m, n );
+        t--;
+        return 0;
+    }
 }

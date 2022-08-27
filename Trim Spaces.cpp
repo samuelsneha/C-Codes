@@ -8,7 +8,6 @@ using namespace std;
             count++;
         }
         return count;
-
 }
 void trimspaces( char str[]) //string trimspaces ( char str[] )
 {
@@ -21,12 +20,9 @@ void trimspaces( char str[]) //string trimspaces ( char str[] )
                str[j] = str[i];
                j++;
         }
-
       }
       str[j] = '\0';
       //return str;
-
-
 }
 int main()
 {
@@ -38,7 +34,7 @@ int main()
     // cout << str;
 }*/
 
-/// 1) Approach when you are focussing on the  non spaces.
+/// Using C String - 1) Approach when you are focussing on the  non spaces.
 
 /*void trimSpaces( char input[] )
 {
@@ -57,7 +53,7 @@ int main()
 }*/
 /// 2) Approach when you are focussing on the spaces.
 
-void trimSpaces( char input[] )
+/*char * trimSpaces( char input[] )
 {
  for( int i = 0; input[i] != '\0'; i++ )
  {
@@ -72,12 +68,31 @@ void trimSpaces( char input[] )
          i--;// This we are doing because suppose Sneha   Samuel is the string. When the first space is encountered, all the elements from its right are shifted one step towards its left. So now there is some character that has come in the place of the first space. Earlier we incremented i and moved on to the next index without checking the character which has come now in the place of first space is space or nonspace character. So to check the character which has come onto the place of first character is space or non space we do i-- and then i++ happens inside the for loop so basically we are at the same index and we check whether the current index element is space or non space. If its space then shifting happens and if it is non space then it doesnt enter the if statement.
      }
  }
+  return input;
 }
-
 int main()
 {
     char input[100];
     cin.get( input, 100 );
-    trimSpaces( input );
-    cout << input;
+    cout << trimSpaces( input );
+}*/
+
+/// Using String Object (Focussing on spaces approach)
+string trimSpaces( string s ){
+    int j;
+    for( int i = 0; i < s.length(); i++ ){
+        if( s[i] == ' ' ){
+            for( j = i+1; j < s.length(); j++ ){
+                s[j-1] = s[j];
+            }
+            s[j-1] = '\0';
+            i--;
+        }
+    }
+    return s;
+}
+int main(){
+   string s;
+   getline( cin, s );
+   cout << trimSpaces(s);
 }

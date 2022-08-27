@@ -1,6 +1,5 @@
-/// IN THIS CODE YOU WILL LEARN HOW TO RETURN CHARACTER ARRAYS FROM FUNCTIONS.
+/// IN THIS CODE YOU WILL LEARN HOW TO RETURN CHARACTER ARRAYS AND STRINGS FROM FUNCTIONS.
 /// IT IS EXACTLY SIMILAR TO HOW WE RETURN INTEGER ARRAYS
-/// EVEN THOUGH IN THE PROBLEM STATEMENT THEY HAVE MENTIONED TO USE STRING DATATYPE AS THE INPUT, ITS NOT POSSIBLE TO SOLVE THIS QUESTION USING STRING DATATYPE SO WE USE CHARACTER ARRAYS.
 #include<bits/stdc++.h>
 using namespace std;
 /*
@@ -12,7 +11,6 @@ int length( char str[] )
       count++;
   }
    return count;
-
 }
 void replacecharacter( char str[], char c1, char c2 )
 {
@@ -23,7 +21,6 @@ for ( int i=0; i < len; i++)
     {
       str[i] = c2;
     }
-
 }
 }
 #include<iostream>
@@ -38,7 +35,8 @@ replacecharacter( str, c1,c2);
 cout << str;
 }*/
 
-char * replaceCharacter( char input[], char a1, char a2 )
+///a) - Using C String
+/*char * replaceCharacter( char input[], char a1, char a2 )
 {
     for( int i = 0; input[i] != '\0'; i++ )
     {
@@ -56,5 +54,22 @@ int main()
     char * answer = replaceCharacter( input, a1, a2 );
     cout << answer;
     return 0;
+}*/
+
+///b)- Using String Object
+string replaceCharacter( string s, char c1, char c2 ){
+   for( int i = 0; s[i] != '\0'; i++ ){
+        if( s[i] == c1 )
+          s[i] = c2;
+   }
+   return s;
 }
+int main(){
+   string ans;
+   getline(cin, ans );
+   char c1, c2;
+   cin >> c1 >> c2;
+   cout << replaceCharacter( ans, c1, c2 );
+}
+
 

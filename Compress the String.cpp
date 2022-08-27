@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-void compressstring( char str[], int freq[] )
+/*void compressstring( char str[], int freq[] )
 {
     char res;
     int i;
@@ -31,4 +31,5 @@ int main()
     cin >> str;
     compressstring( str , freq );
 
-}
+}*/
+

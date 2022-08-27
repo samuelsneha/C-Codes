@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 /*void Leaders(int* arr,int len)
 {
     int maxi=INT_MIN;
@@ -16,10 +18,7 @@
     {
         cout<<temp[j]<<' ';
     }*/
-#include<bits/stdc++.h>
-using namespace std;
-
-void leadersinarray(int* arr,int len)
+/*void leadersinarray(int* arr,int len)
 {
 
    for (int i = 0; i <len; i++)
@@ -44,5 +43,30 @@ int main()
             cin >> arr[i];
         }
         leadersinarray( arr, n );
+}*/
+void Leaders( int arr[], int size ){
+    int  j = 0;
+    for( int i = 0; i < size; i ++ ){
+        for( j = i + 1; j < size; ){
+            if( arr[i] >= arr[j] ){
+                j++;
+            }
+            else{
+                break;
+            }
+        }
+        if( j == size )
+            cout << arr[i] << " ";
+    }
+}
+int main(){
+   int n;
+   cin >> n;
+   int arr[n];
+   for( int i = 0; i < n; i++ ){
+      cin >> arr[i];
+   }
+   Leaders( arr, n );
+   return 0;
 }
 

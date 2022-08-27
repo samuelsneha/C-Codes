@@ -7,78 +7,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-/*int pairSum(int *arr, int n, int num)
-{
-    sort( arr, arr + n );
-    int i= 0;
-    int j= n - 1;
+//int pairSum( int *arr, int size, int sum )
+//{
+//    int count = 0;
+//    for( int i = 0; i < size; i++ )
+//    {
+//        for( int j = 0; j < size; j++ )
+//        {
+//            if( ( arr[i] + arr[j] == sum ) && ( i != j ) && ( arr[i] < arr[j] ) )
+//            count++;
+//        }
+//    }
+//  return count;
+//}
+int pairSum( int arr[], int size, int x ){
     int count = 0;
-    while( i < j )
-    {
-        if( arr[i] + arr[j] == num )
-        {
-        int se=arr[i],ee=arr[j];
-        if(se==ee)
-        {int tot=j-i+1;
-        count+=((tot)*(tot-1))/2;
-        return count;
-        }
-        int tsi=i+1,tei=j-1;
-        while(tsi<=tei&&arr[tsi]==se)
-        tsi++;
-        while(tsi<=tei&&arr[tei]==ee)
-        tei--;
-        int ttots=tsi-i,ttote=j-tei;
-        count+=(ttots*ttote);
-        i=tsi;
-        j=tei;
-        }
-        else
-        {
-            if( arr[i] + arr[j] <  num )
-            i++;
-            else
-        	j--;
-        }
-    }
-    return count;
-}
-int main()
-{
-	int t;
-	cin >> t;
-
-	while (t--)
-	{
-		int size;
-		int x;
-
-		cin >> size;
-		int *input = new int[size];
-
-		for (int i = 0; i < size; i++)
-		{
-			cin >> input[i];
-		}
-
-		cin >> x;
-
-		cout << pairSum(input, size, x) << endl;
-
-		delete[] input;
-	}
-}*/
-
-
-int pairSum( int *arr, int size, int sum )
-{
-    int count = 0;
-    for( int i = 0; i < size; i++ )
-    {
-        for( int j = 0; j < size; j++ )
-        {
-            if( ( arr[i] + arr[j] == sum ) && ( i != j ) && ( arr[i] < arr[j] ) )
-            count++;
+    for( int i = 0; i < size; i++ ){
+        for( int j = 0; j < size; j++ ){
+            if( arr[i] + arr[j] == x && i != j && i < j ){ //You can do either i < j OR arr[i] < arr[j]. Both intend the same.
+                // arr[i] = INT_MAX; Understand why doing this, all the testcases wont work
+                count++;
+            }
         }
     }
     return count;
@@ -92,7 +41,7 @@ int main()
         int size;
         cin >> size;
         int arr[size];
-         for( int i = 0; i < size; i++ )
+        for( int i = 0; i < size; i++ )
          {
              cin >> arr[i];
          }

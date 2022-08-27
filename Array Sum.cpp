@@ -1,22 +1,10 @@
-/*#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-int main(){
-int sum=0;
-int n;
-int input[n];
-cin >>n;
-cin >> input[n];
-for ( int i=0; i <= n-1; i++  ) {
-sum= sum+ input [i];
-}
-cout << sum;
-} */
-#include<iostream>
-using namespace std;
-int main(){
+
+/*int main(){
     int sum=0;
 	int n;
-	cin >>n;
+	cin >> n;
     int input[n];
     for(int i=0;i<n;i++){
 		cin >> input[i];
@@ -25,4 +13,25 @@ int main(){
 		sum= sum+ input [i];
 	}
 	cout << sum;
+} */
+
+
+void sumOfArray( int n , int arr[] ){
+    int sum = 0;
+    for( int i = 0; i < n; i++ ){
+        sum = sum + arr[i];
+    }
+    cout << sum;
+}
+
+int main(){
+    int n;
+    //cout << "Enter the number of elements in the array";
+    cin >> n;
+    int arr[n];
+    for( int i = 0; i < n; i++ ){
+        cin >> arr[i];
+    }
+    sumOfArray( n, arr );
+    return 0;
 }

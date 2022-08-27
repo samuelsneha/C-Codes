@@ -27,3 +27,28 @@ int main()
  return 0;
 
 }
+
+
+
+//int main(){
+//    int rows, num;
+    //cout << "Enter the number of rows" << endl;
+//    cin >> rows;
+//    int a = rows - 1; //Earlier this 'a' was kept above the line cin >> rows; from where we take rows input and because rows was not defined at that place we got TLE.
+//    for( int i = 1; i<= rows; i++ ){
+
+//        for( int j = 1; j <= a; j++ ){
+//            cout << " ";
+//        }
+//        num = i;
+//        for( int j = 1; j<= i; j++,num++ ){
+//            cout << num;
+//        }
+//        cout << endl;
+//        a--;
+//    }
+//    return 0;
+//
+//}
+
+

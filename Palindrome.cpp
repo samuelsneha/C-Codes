@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+///1
 /*int length ( char str[]){
 int count = 0;
 for ( int i=0; str[i] != '\0'; i++)
@@ -9,59 +10,25 @@ for ( int i=0; str[i] != '\0'; i++)
        return count;
 
 }
-     void checkpalindrome ( char str[]){
-        int len = length( str );
-         int end = len -1;
-        for ( int i=0; i < len; i++)
-        {
-            if ( str[i]!= str [ end])
-            {
-                cout << false;
-            }
-            else
-            {
-                cout << true;
-            }
-
-        }
-
-     }
-
-
-int main()
-{
-     int size = 1000;
-    char str[ size];
-    cin >> str;
-    checkpalindrome( str );
-} */
-
-
-
- /* #include <iostream>
-#include <cstring>
-using namespace std;
-int main()
-{
-    int size=1000;
-    char str[size];
-    cin >> str;
-
-
-    int length ( char str[])
+void checkpalindrome ( char str[]){
+    int len = length( str );
+     int end = len -1;
+    for ( int i=0; i < len; i++)
     {
-        int count = 0;
-        for ( int i=0; str[i] != '\0'; i++)
+        if ( str[i]!= str [ end])
         {
-            count++;
+            cout << false;
         }
-        return count;
+        else
+        {
+            cout << true;
+        }
     }
-
-
-
-   bool checkpalndrome (char str[])
-    {
+}
+ */
+///2
+/*bool checkpalndrome (char str[])
+{
         int len=length(str);
         int end=len-1;
 
@@ -73,14 +40,10 @@ int main()
         }
 
         return true;
-    }
-
 }
-#include <iostream>
-#include <cstring>
-using namespace std;
-
-int length(char str[]){
+*/
+///3
+/*int length(char str[]){
    int count=0;
 
    for(int i=0;str[i]!='\0';i++){
@@ -102,10 +65,6 @@ bool palindrome(char str[]){
     }
     return true;
 }
-
-
-
-
 int main()
 {
     int size = 100;
@@ -114,8 +73,8 @@ int main()
     cout << palindrome( str );
 
 }*/
-
-bool palindrome( char sneha[] )
+///4
+/*bool palindrome( char sneha[] )
 {
     int count = 0;
     bool answer = true;
@@ -143,4 +102,43 @@ int main()
         cout << "true";
     else
         cout << "false";
+}*/
+///5 a) - Using C String
+/*bool checkPalindrome( char str[] ){
+    int length = strlen( str ); //Could have also done a for/while loop/
+    bool ans = true;
+    int z = length - 1;
+    for( int i = 0; i <= z; i++, z-- ){
+        if( str[i] != str[z]){
+            ans = false;
+            return ans;
+        }
+    }
+    return ans;
 }
+int main(){
+    int size = 1e6;
+    char arr[size];
+    cin >> arr;
+    cout << (checkPalindrome( arr )? "true":"false");
+}*/
+///5 b)- Using String Object
+bool checkPalindrome( string s ){
+    int length = s.size();
+    bool ans = true;
+    int z = length - 1;
+    for( int i = 0; i <= z; i++, z-- ){
+        if( s[i] != s[z]){
+            ans = false;
+            return ans;
+        }
+    }
+    return ans;
+}
+int main(){
+   string s;
+   getline(cin,s);
+   cout << (checkPalindrome( s )? "true":"false");
+}
+
+

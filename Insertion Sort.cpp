@@ -20,7 +20,6 @@ using namespace std;
     }
 
 }
-
 int main()
 {
 
@@ -44,9 +43,9 @@ int main()
     }
 
   }
-}
+}*/
 
-void insertionSort ( int * arr, int size )
+/*void insertionSort ( int * arr, int size )
 {
     for( int i = 1; i < size; i++ )
     {
@@ -65,7 +64,7 @@ void insertionSort ( int * arr, int size )
         }
     }
     return;
-}*/
+}
 /// This above approach is right but can be optimized further where comparision and shifting is done at the same time together as shown below.
 void insertionSort ( int * arr, int size )
 {
@@ -87,7 +86,6 @@ void insertionSort ( int * arr, int size )
     }
     return;
 }
-
 int main()
 {
     int tc;
@@ -108,4 +106,19 @@ int main()
         }
     }
     return 0;
+}*/
+
+void insertionSort( int arr[], int size ){
+    for( int i = 1; i < size; i++ ){
+       for( int z = i; z > 0; z-- ){
+        if( arr[z] < arr[z-1]){
+            int temp = arr[z];
+            arr[z] = arr[z - 1];
+            arr[z - 1] = temp;
+         }
+         else{
+             break;
+         }
+    }
+  }
 }

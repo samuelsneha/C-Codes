@@ -1,29 +1,3 @@
-/* void arrange(int *arr, int n)
-{
-    int left=0;
-    int right=n-1;
-    int counter=1;
-    int num=1;
-
-    while(left<=right)
-    {
-        if(counter==1)
-        {
-            arr[left]=num;
-            counter=2;
-            left++;
-            num++;
-        }
-        else if(counter==2)
-        {
-            arr[right]=num;
-            counter=1;
-            right--;
-            num++;
-        }
-    }
-} */
-
 #include <bits/stdc++.h>;
 using namespace std;
 
@@ -45,33 +19,50 @@ using namespace std;
     return;
 }*/
 /// Approach 2: Dividing on the basis of the element values in the array.
-void arrange ( int *arr, int size )
-{
+//void arrange ( int *arr, int size )
+//{
     // int value = 1;
-    int value;
-    int left = 0;
-    int right = size - 1;
-    for( value = 1; value <= size; value++ )
+//    int value;
+//    int left = 0;
+//    int right = size - 1;
+//    for( value = 1; value <= size; value++ )
     // while( left <= right )
-    {
-        if( value % 2 != 0 )
-        {
-            arr[left] = value;
+//    {
+//        if( value % 2 != 0 )
+//        {
+//            arr[left] = value;
             // value++;
-            left++;
-        }
-        else
-        {
-            arr[right] = value;
+//            left++;
+//        }
+//        else
+//        {
+//            arr[right] = value;
             // value++;
-            right--;
-        }
-    }
-}
+//            right--;
+//        }
+//    }
+//}
 
-int main()
-{
-    int tc;
+///Approach 3:
+//void arrange( int arr[], int n ){
+//    int start = 0, last = n - 1;
+//    for( int i = 1; start <= last;  start++, last-- ){
+//        if( start == last ){
+//            arr[start] = i;
+//            break;
+//        }
+//        arr[start] = i;
+//        i++;
+//        arr[last] = i;
+//        i++;
+//    }
+//}
+
+
+
+  int main()
+  {
+      int tc;
     cin >> tc;
     while( tc-- )
     {

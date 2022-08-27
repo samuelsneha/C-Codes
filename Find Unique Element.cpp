@@ -1,4 +1,3 @@
-
 /// This code is designed in such a way that if 2 unique elements are present then it will ONLY print the first unique element in the array.
 /// Also note that this code is designed in such a way that there will be one unique element compulsorily present in the code.
 /// You can also do this question using bool datatype.
@@ -41,3 +40,21 @@ int main()
     }
     return 0;
 }
+
+//int findUnique( int arr[], int n ){
+//     int j, ans;
+//     for( int i = 0; i < n; i++ ) {
+//         for( j = 0; j < n; j++ ){
+//             if( arr[i] == arr[j] && i != j ){ //duplicate found
+//                 arr[i] = INT_MAX;
+//                 arr[j] = INT_MAX;
+//                 break;
+//             }
+//         }
+//         if( j == n ){ //its unique
+//             ans =  arr[i];
+//             break;
+//         }
+//     }
+//     return ans;
+// }

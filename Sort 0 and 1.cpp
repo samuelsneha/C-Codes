@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 /// Approach 1- Swapping the Zeroes to the Front
-void sort01 ( int *arr, int size )
+/*void sort01 ( int *arr, int size )
 {
     int k = 0;
     for( int i = 0; i < size; i++ )
@@ -15,7 +15,7 @@ void sort01 ( int *arr, int size )
         }
     }
     return;
-}
+}*/
 /// Approach 2 - Swapping the Ones to the End
 /// Understand why this approach never works. Do dry run and check you will inderstand.
 /// When you are swapping to the front, you don have any limits wrt the position. You can keep 0s till how much ever you want to the front.
@@ -38,6 +38,18 @@ void sort01 ( int *arr, int size )
     }
     return;
 }*/
+void sortZeroesAndOne(int arr[], int size){
+    int end = size - 1;
+    for( int i = 0; i <= end ; i++ ){
+        if( arr[i] == 1 ){ // no need to put 1 in quotes like '1', it will give error.
+            int temp = arr[end];
+            arr[end] = arr[i];
+            arr[i] = temp;
+            end--;
+            i--;
+        }
+    }
+}
 int main()
 {
     int tc;
@@ -47,7 +59,7 @@ int main()
         int size;
         cin >> size;
         int arr[size];
-         for( int i = 0; i < size; i++ )
+        for( int i = 0; i < size; i++ )
          {
              cin >> arr[i];
          }

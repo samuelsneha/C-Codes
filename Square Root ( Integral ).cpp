@@ -14,21 +14,37 @@ cout << sq;
 
 }*/
 
-int main()
-{
+//int main()
+//{
 
-    int num;
-    cin>> num;
-    int max = 1;
-    int a;
-    for( int i =1; i <=9; i++ )
-    {
-        int ans = i*i;
-        if ( ans > max && ans <= num )
-         {
-             max = ans;
-             a = i;
-         }
+//    int num;
+//    cin>> num;
+//    int max = 1;
+//    int a;
+//    for( int i =1; i <=9; i++ )
+//    {
+//        int ans = i*i;
+//        if ( ans > max && ans <= num )
+//         {
+//             max = ans;
+//             a = i;
+//         }
+//    }
+//    cout << a;
+//}
+
+
+int main(){
+   int num;
+    // cout << "Enter the number";
+    cin >> num;
+    for( int i = 1; ; ){
+        if( pow(i, 2) <= num )
+            i++;
+        else{
+            cout << i - 1;
+            break;
+        }
     }
-    cout << a;
+    return 0;
 }

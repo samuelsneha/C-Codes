@@ -50,26 +50,50 @@ int main()
 //The nth power is the count of the number of digits. We need to add the values by (nth -1) power of 2.
 // Like for 1101 = ( 2^3 + 2^2 + 2^0 ).
 //Its my method.
-int main()
-{
-    int num;
+//int main()
+//{
+//    int num;
+//    cin >> num;
+//    int count = 0;
+//    int sum = 0;
+//    int leftover = num;
+
+//    while( leftover > 0 )
+//    {
+//      int individual = leftover % 10;
+//      leftover = leftover/10;
+
+//      if( individual == 1 )
+//      {
+//          count++;
+//          sum = sum + pow( 2, count-1 );
+//      }
+//       else
+//           count++;
+//    }
+//    cout << sum;
+//}
+
+int main(){
+    int num, digit = 0, position = 0, x = 0, total = 0;
+    // cout << "Enter the number";
     cin >> num;
-    int count = 0;
-    int sum = 0;
-    int leftover = num;
-
-    while( leftover > 0 )
-    {
-      int individual = leftover % 10;
-      leftover = leftover/10;
-
-      if( individual == 1 )
-      {
-          count++;
-          sum = sum + pow( 2, count-1 );
-      }
-       else
-           count++;
+    string numS = to_string(num);
+    int length = numS.length();
+    for( int i = 1; i <= length; i++ ){
+        digit = num % 10;
+        num = num / 10;
+        position++;
+        if( digit == 1 ){
+          x = position - 1;
+          int sum = 1;
+          while( x > 0 ){
+            sum = sum * 2;
+            x--;
+          }
+          total = total + sum;
+        }
     }
-    cout << sum;
+    cout << total;
+    return 0;
 }

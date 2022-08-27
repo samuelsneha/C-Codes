@@ -9,7 +9,6 @@ using namespace std;
   }
     return count;
 }
-
 char reversedstringwithreversedwords ( char str[] )
 {
  int len = length( str );
@@ -24,7 +23,6 @@ char reversedstringwithreversedwords ( char str[] )
   }
   return str;
 }
-
 void reversedstring ( char str[])
 {   int len = length( str );
    str = reversedstringwithreversedwords(str);
@@ -37,9 +35,7 @@ void reversedstring ( char str[])
          int last = i-1;
          reversedstringwithrversedwords ( str, start, last );
          start = i +1;
-
      }
-
    }
 }
 int main()
@@ -48,12 +44,9 @@ int main()
     cin.getline( str, 100);
     reversedstringwithreversedwords( str );
     cout << str;
-}
+}*/
 
-#include<bits/stdc++.h> // It has all the libraries
-using namespace std;
-
-int length(char* str)
+/*int length(char* str)
 {
   int count =0;
   for ( int i =0; str[i] != '\0'; i++)
@@ -62,7 +55,6 @@ int length(char* str)
   }
     return count;
 }
-
 void reversedstringwithreversedwords (char* str, int s, int e) /// You have to reverse from index s to index e s = 0, e = len-1
 {
  char temp; //DONT DO THE MISTAKE OF INITIALIZING THIS TEMP AS INT AS HERE NOW ITS CHAR
@@ -74,8 +66,7 @@ void reversedstringwithreversedwords (char* str, int s, int e) /// You have to r
     e--;
   }
 }
-
-void reversedstring (char* str) //
+void reversedstring (char* str)
 {
     int len = length(str);
     reversedstringwithreversedwords(str, 0,len-1); // Full reversal we added 2 params one is start index and one is ending index
@@ -92,7 +83,6 @@ void reversedstring (char* str) //
      }
    }
 }
-
 int main()
 {
     char str[1000];
@@ -101,15 +91,9 @@ int main()
     reversedstring(str);
 
     cout << str;
-}
+}*/
 
-
-
-
-
-
-
-/* #include<cstring>
+/*
 void reverseWords(char input[],int start,int end){
     while(start<end){
         char temp=input[start];
@@ -119,12 +103,10 @@ void reverseWords(char input[],int start,int end){
         end--;
     }
 }
-
 void reverseStringWordWise(char input[]) {
     int i=0;
     int j=strlen(input)-1;
     int len=strlen(input);
-
     while(i<j){
         char temp=input[i];
         input[i]=input[j];
@@ -132,13 +114,9 @@ void reverseStringWordWise(char input[]) {
         i++;
         j--;
     }
-
-    // Reverse Words Indivisually
-
+// Reverse Words Indivisually
     int start=0;
     int end=0;
-
-
     for( i=0;i<len;i++){
         if(input[i]==' '){
             end=i-1;
@@ -149,9 +127,9 @@ void reverseStringWordWise(char input[]) {
     }
     end=i-1;
     reverseWords(input,start,end);
-}
-    */
- void reverseStringWordWise( char input[] )
+}*/
+
+/* void reverseStringWordWise( char input[] )
  {
 /// THIS IS THE FIRST PART OF THE CODE FROM BELOW
      int count = 0;
@@ -188,7 +166,6 @@ void reverseStringWordWise(char input[]) {
 // input[start] = '\0';
      return;
 }
-
  int main()
  {
      char input[1000];
@@ -196,4 +173,30 @@ void reverseStringWordWise(char input[]) {
      reverseStringWordWise( input );
      cout << input;
      return 0;
- }
+ }*/
+void reverseStringWordWise( string input ){
+    int length = input.length();
+    int z = length - 1, start = 0;
+    for( int i = 0; i <= z; i++, z-- ){
+        int temp = input[i];
+        input[i] = input[z];
+        input[z] = temp;
+    }
+    for( int i = 0; i <= length; i++ ){
+        if( input[i] == ' ' || input[i] == '\0' ){
+            int end = i - 1;
+            for( int j = start; j <= end; j++, end-- ){
+                int temp = input[j];
+                input[j] = input[end];
+                input[end] = temp;
+            }
+            start = i + 1;
+        }
+    }
+}
+int main(){
+   string s;
+   getline( cin, s);
+   reverseStringWordWise(s);
+   cout << s;
+}

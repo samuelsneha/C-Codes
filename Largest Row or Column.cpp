@@ -17,7 +17,6 @@ using namespace std;
                   res =i;
               }
     }
-
     for ( int j =0; j < n; j++ )
     {   int sum2 = 0;
         for ( int k =0; k < m; k++)
@@ -37,7 +36,6 @@ using namespace std;
     else
         cout << "column" << " " << res << " " << maximum;
 }
-
 int main()
 {
       int t;
@@ -59,7 +57,7 @@ int main()
     largestroworcolumn( mat, m, n);
 }
 }*/
-findLargest( int matrix[m][n], int rows[], int cols[] )
+/*findLargest( int matrix[m][n], int rows[], int cols[] )
 {
     for( int i = 0; i < m; i++ )
     {
@@ -119,4 +117,61 @@ int main()
       findLargest( matrix, rows, cols );
     }
     return 0;
+}*/
+
+void findLargest ( int **a, int m, int n ){
+    int CLargest = 0, RLargest = 0, CNo = 0, RNo = 0, largest = 0, No = 0;
+    for( int j = 0; j < n; j++ ){
+        int sum = 0;
+        for( int i = 0; i < m; i++ ){
+            sum = sum + a[i][j];
+        }
+        if( sum > CLargest ){
+            CLargest = sum;
+            CNo = j;
+        }
+    }
+    for( int i = 0; i < m; i++ ){
+        int sum = 0;
+        for( int j = 0; j < n; j++ ){
+            sum = sum + a[i][j];
+        }
+        if( sum > RLargest ){
+            RLargest = sum;
+            RNo = i;
+        }
+    }
+    if( m == 0 && n == 0 ){
+        largest = INT_MIN;
+        No = 0;
+        cout << "row" << " "<< No << " "<< largest << endl;
+    }
+    else if( RLargest >= CLargest ){
+        largest = RLargest;
+        No = RNo;
+        cout << "row" << " "<< No << " "<< largest << endl;
+    }
+    else{
+        largest = CLargest;
+        No = CNo;
+        cout << "column" << " "<< No << " "<< largest << endl;
+    }
+}
+int main(){
+    int t;
+    cin >> t;
+    while( t > 0 ){
+        int m, n;
+        cin >> m >> n;
+        int **a = new int *[m]; //Make a habit to understand and implement this when you have to pass 2D Array to the function as a parameter.
+        for( int i = 0; i < m; i++ ){
+            a[i] = new int[n];//Make a habit to understand and implement this when you have to pass 2D Array to the function as a parameter.
+            for( int j = 0; j < n; j++ ){
+                cin >> a[i][j];
+            }
+        }
+        findLargest( a, m, n );
+        t--;
+        return 0;
+    }
 }
