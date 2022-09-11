@@ -1,6 +1,7 @@
 ///See Char Arrays in C++ end in null ('\0') while Int Arrays in C++ don't end in null('\0').
 ///It is compulsory to mention the size of both Int and Char Arrays in C++.
 ///Arrays can be 1D as well as 2D but Strings can be 1D only.
+///Whenever we pass arrays ( int or char arrays ) to a function, effectively woh pointers ki tarah pass ho raha hai. Hence we can write either int arr[] or int * arr in the called function. We can also pass part of an array to the function eg. sum( arr+ 3, 10).
 
 ///To take input for Int arrays,  1) we always have to give the number of elements ie. n and then array of size n ie. int arr[n]. And since we give n, we never have to do strlen(arr) or a for loop to find its length.
 ///                               eg. int n;   int arr[n];   for( int i = 0; i < n; i++ ) {...}
@@ -13,6 +14,48 @@
 ///To convert Char to String there are many ways: 1) char x;         2) name_of_string.append( size, char );      3) name_of_string.assign( size, char );
 ///                                                  string s;
 ///                                                  s += x;
+
+
+/// #include<bits/stdc++.h>
+/// using namespace std;
+/// int main() {
+/// int a[] = {'1', '2', '3','4'};
+/// char b[] = {'a','b','c','d'};
+/// char c[] = "xyz";
+/// cout << a << endl; ==> here for int array a, you will get address of a[0] ie. address of a (which will be different everytime you run ) as the output.
+/// cout << a[0] << endl; ==> here you will get value of the 0th element of the integer array a ie. 1 as the output.
+/// cout << b << endl; ==> here you will get abcd...'\0' as the output for char array b.
+/// cout << c << endl; ==> here you will get xyz as the output for a char array c.
+/// return 0;
+/// }
+/// So from this example you can see the difference between when you output an int array and a char array.For int array a you got the address of a[0] whereas for char array b you got the entire array till we reach null as the output.
+
+
+/// Pointer variable can be assigned a value whereas array variable cannot be.
+/// int a[10];
+/// int *p;
+/// p=a;  ==> legal
+/// a=p;  ==> illegal
+/// Arithmetic operations on pointer variable is allowed, but not allowed on array variable.
+/// p++; ==> Legal
+/// a++; ==> illegal
+
+
+///Static Allocation - Stack is used. Works in compile time. Dynamic Allocation - Heap is used. Works in run time.
+///To dynamically declare a 1D Array:
+/// int *arr = new int[10] OR int *arr = new int[n] ;
+///To dynamically delete a 1D Array:
+/// delete [] arr;
+///To dynamically declare a 2D Array:
+/// int **arr = new int * [m]; ==> think of this statement as a vertical array with m different pointers inside it.
+/// for( int i = 0; i < m; i++ ){ ==> here we are making a for loop to iterate over each m pointers.
+/// arr[i] = new int [n] } ==> here we are creating an array using dynamic allocation method with n different columns for each pointer of the for loop.
+///To dynamically delete a created 2D Array:
+/// for( int i = 0; i < m; i++ ){ ==> here we are deleting the m different rows using for loop .
+/// delete[] arr[i]; ==> here delete[] stands for deleting an array, delete[] arr[i] stands for deleting arr[i] array.
+/// }
+/// delete[] arr; ==> here we are deleting the vertical array which contains different pointers.
+
 
 /// '\0' == 0, 1 > null, 0 == null, -1 < null (while compairing null with integers)
 
